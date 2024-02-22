@@ -3,12 +3,12 @@ from setuptools import setup, find_packages
 setup(
     name="mochi-api-client",  # Name of your package
     version="0.1.0",  # Initial release version
-    author="Your Name",  # Your name or your organization's name
-    author_email="your.email@example.com",  # Your contact email
+    author="Jorge Sequeira",  # Your name or your organization's name
+    author_email="jsequeira03@gmail.com",  # Your contact email
     description="A Python client for interacting with the Mochi API.",  # A short description of the project
     long_description=open("README.md").read(),  # A long description from your README.md
     long_description_content_type="text/markdown",  # Specifies that the long description is in Markdown
-    url="https://github.com/yourusername/mochi-api-client",  # Project home page or repository URL
+    url="https://github.com/gsejas/mochi-api-client",  # Project home page or repository URL
     packages=find_packages(),  # Automatically find and include all packages in the project
     install_requires=[
         "requests",  # Add other dependencies as needed
