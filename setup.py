@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="mochi-api-client",  # Name of your package
-    version="0.1.0",  # Initial release version
+    version="0.1.1",  # Initial release version
     author="Jorge Sequeira",  # Your name or your organization's name
     author_email="jsequeira03@gmail.com",  # Your contact email
     description="A Python client for interacting with the Mochi API.",  # A short description of the project
