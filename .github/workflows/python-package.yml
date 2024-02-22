@@ -29,6 +29,11 @@ jobs:
         run: |
           pytest  # Add parameters as necessary
 
+      - name: Environment Variable Test
+        run: echo Test Variable is $TEST_VARIABLE
+        env:
+          TEST_VARIABLE: "Dummy Value"
+
       - name: Run pytest
         env:
           MOCHI_API_KEY: ${{ secrets.MOCHI_API_KEY }}
