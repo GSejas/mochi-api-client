@@ -21,7 +21,7 @@ Here's a quick example to get you started:
 from mochi.client import Mochi
 from mochi.auth import Auth
 
-auth = Auth.Token("0d8496b7c44a446537e56c17")
+auth = Auth.Token("find api token in mochi settings page")
 mochi = Mochi(auth=auth)
 
 

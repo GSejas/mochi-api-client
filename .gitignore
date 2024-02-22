@@ -1,3 +1,6 @@
 venv/*
+build/*
+dist/*
 **.egg-info
 **.pyc
+.pypirc
