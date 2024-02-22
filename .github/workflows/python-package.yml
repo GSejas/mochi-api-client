@@ -25,14 +25,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install setuptools wheel twine pytest  # Add any other dependencies you might need
           pip install -r requirements.txt
-      - name: Run tests
-        run: |
-          pytest  # Add parameters as necessary
-
-      - name: Environment Variable Test
-        run: echo Test Variable is $TEST_VARIABLE
-        env:
-          TEST_VARIABLE: "Dummy Value"
 
       - name: Run pytest
         env:
