@@ -31,4 +31,4 @@ class Decks:
     def delete_deck(self, deck_id):
         response = self.session.delete(f"{self.base_url}{deck_id}")
         response.raise_for_status()
-        return response.json()
+        # return response.json()

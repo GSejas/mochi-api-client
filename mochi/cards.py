@@ -39,4 +39,4 @@ class Cards:
     def delete_card(self, card_id):
         response = self.session.delete(f"{self.base_url}{card_id}")
         response.raise_for_status()
-        return response.json()
+        # return response.json()
