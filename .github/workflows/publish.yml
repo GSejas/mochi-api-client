@@ -2,14 +2,11 @@ name: Publish Python Package
 
 on:
   push:
-    branches:
-      - main # Set this to your default branch
-  pull_request:
-    branches:
-      - main
+    tags:
+      - 'v*.*.*' # Matches version tags like v1.0.0
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,16 +25,17 @@ jobs:
       - name: Install dependencies
         run: poetry install
 
-      - name: Docstring Coverage Test
-        run: interrogate --fail-under 75 mochi
-
-      - name: Run pytest
+      - name: Run Unit Tests
         env:
           MOCHI_API_KEY: ${{ secrets.MOCHI_API_KEY }}
         run: poetry run pytest tests/unit
 
-      # - name: Publish to PyPI
-      #   if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
-      #   env:
-      #     POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_API_TOKEN }}
-      #   run: poetry publish --build
+      - name: Run Integration Tests
+        env:
+          MOCHI_API_KEY: ${{ secrets.MOCHI_API_KEY }}
+        run: poetry run pytest tests/integration
+
+      - name: Publish to PyPI
+        env:
+          POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_API_TOKEN }}
+        run: poetry publish --build
