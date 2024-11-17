@@ -1,0 +1,112 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Code Quality with Pylint",
+            "type": "shell",
+            "command": "pylint $(git ls-files '*.py')",
+            "problemMatcher": [
+                "$pylint"
+            ],
+            "icon": {
+                "color": "terminal.ansiBlack",
+                "id": "add"
+            }
+        },
+        {
+            "label": "Run Tests with Pytest",
+            "type": "shell",
+            "command": "pytest --html=pytest_report.html --self-contained-html",
+            "problemMatcher": [],
+            "icon": {
+                "id": "beaker"
+            }
+        },
+        {
+            "label": "Coverage Report",
+            "type": "shell",
+            "command": "pytest --cov=mochi --cov-report=html",
+            "problemMatcher": [],
+            "icon": {
+                "id": "graph"
+            }
+        },
+        {
+            "label": "Generate Documentation",
+            "type": "shell",
+            "command": "mkdocs build",
+            "problemMatcher": [],
+            "icon": {
+                "id": "book"
+            }
+        },
+        {
+            "label": "Documentation Coverage",
+            "type": "shell",
+            "command": "interrogate --fail-under 75 mochi",
+            "problemMatcher": [],
+            "icon": {
+                "id": "checklist"
+            }
+        },
+        {
+            "label": "Lint with Flake8",
+            "type": "shell",
+            "command": "flake8 . --select=E9,F63,F7,F82 --max-line-length=127 --statistics --show-source ",
+            "problemMatcher": [
+                "$flake8"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+            },
+            "icon": {
+                "id": "paintcan"
+            }
+        },
+        {
+            "label": "Generate Documentation",
+            "type": "shell",
+            "command": "pdoc --output-dir docs app",
+            "group": "build",
+            "problemMatcher": [],
+            "detail": "Generate documentation using pdoc",
+            "icon": {
+                "id": "book"
+            }
+        },
+        {
+            "label": "Run Unit Pytest",
+            "type": "shell",
+            "command": "pytest tests/unit",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+            },
+            "icon": {
+                "id": "beaker"
+            }
+        },
+        {
+            "label": "Clean Pycache",
+            "type": "shell",
+            "command": "find . -type d -name '__pycache__' -exec rm -r {} +; find . -type f -name '*.pyc' -delete",
+            "problemMatcher": [],
+            "icon": {
+                "id": "trash"
+            }
+        }
+    ]
+}

@@ -46,6 +46,75 @@ print(templates)
 mochi.close()
 ```
 
+## Diagrams
+
+
+
+
+### Sequence Diagram
+A sequence diagram to show the interaction between the client and the API when creating a new card.
+
+## Sequence Diagram for Creating a Card
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant MochiClient as Mochi Client
+    participant CardsAPI as Cards API
+
+    User->>MochiClient: create_card(content, deck_id, kwargs)
+    MochiClient->>CardsAPI: POST /cards
+    CardsAPI-->>MochiClient: 201 Created
+    MochiClient-->>User: New card details
+```
+
+## Class Diagram
+
+```mermaid
+classDiagram
+    class Mochi {
+        -session: Session
+        -cards: Cards
+        -decks: Decks
+        -templates: Templates
+        +__init__(auth: Auth, base_url: str)
+        +close()
+    }
+
+    class Auth {
+        +Token(api_key: str)
+    }
+
+    class Cards {
+        +__init__(session: Session, base_url: str)
+        +create_card(content: str, deck_id: str, kwargs: dict)
+        +get_card(card_id: str)
+        +update_card(card_id: str, kwargs: dict)
+        +delete_card(card_id: str)
+        +list_cards(deck_id: str)
+    }
+
+    class Decks {
+        +__init__(session: Session, base_url: str)
+        +create_deck(name: str, kwargs: dict)
+        +get_deck(deck_id: str)
+        +update_deck(deck_id: str, kwargs: dict)
+        +delete_deck(deck_id: str)
+        +list_decks()
+    }
+
+    class Templates {
+        +__init__(session: Session, base_url: str)
+        +get_template(template_id: str)
+        +list_templates()
+    }
+
+    Mochi --> Auth
+    Mochi --> Cards
+    Mochi --> Decks
+    Mochi --> Templates
+```
+
 ## Documentation
 For detailed documentation on all available methods and their parameters, visit Mochi API Documentation.
 

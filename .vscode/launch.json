@@ -10,6 +10,45 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: Unit pytest",
+            "type": "python",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "--maxfail=3",
+                "--disable-warnings",
+                "tests/unit",
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Python: Integration pytest",
+            "type": "python",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "--maxfail=3",
+                "--disable-warnings",
+                "tests/integration",
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Python: This pytest",
+            "type": "python",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "--maxfail=3",
+                "--disable-warnings",
+                "${file}"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false
         }
     ]
 }

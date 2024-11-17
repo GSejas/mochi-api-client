@@ -3,5 +3,22 @@
         "tests"
     ],
     "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true
+    "python.testing.pytestEnabled": true,
+    "github.copilot.chat.generateTests.codeLens": true,
+    "github.copilot.chat.followUps": "always",
+    "github.copilot.chat.reviewSelection.instructions": [
+        {
+            "file": ".copilot-review-instructions.md"
+        }
+    ],
+    "github.copilot.chat.testGeneration.instructions": [
+        {
+            "file": ".copilot-test-instructions.md"
+        }
+    ],
+    "github.copilot.chat.codeGeneration.instructions": [
+    {
+        "file": ".copilot-instructions.md"
+    }
+],
 }
