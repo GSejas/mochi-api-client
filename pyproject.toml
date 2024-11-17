@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mochi-api-client"
-version = "0.1.1"
+version = "0.1.2"
 description = "Python wrapper for the Mochi spaced repetition platform API"
 authors = ["GSejas <jsequeira03@gmail.com>"]
 license = "MIT"
