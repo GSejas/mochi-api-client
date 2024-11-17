@@ -29,7 +29,7 @@ jobs:
         run: poetry install
 
       - name: Docstring Coverage Test
-        run: interrogate --fail-under 75 mochi
+        run: poetry run interrogate --fail-under 75 mochi
 
       - name: Run pytest
         env:
