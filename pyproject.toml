@@ -5,7 +5,24 @@ description = "Python wrapper for the Mochi spaced repetition platform API"
 authors = ["GSejas <jsequeira03@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-
+packages = [
+    { include = "mochi" }
+]
+classifiers=[
+        "Development Status :: 3 - Alpha",  # Change as appropriate for your project's maturity
+        "Intended Audience :: Developers",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+        "License :: OSI Approved :: MIT License",  # Specify your project's license
+        "Programming Language :: Python :: 3",  # Specify the Python versions you support
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+    ]
+keywords = ["mochi", "api", "client", "wrapper", "spaced repetition"]
+repository = "https://github.com/gsejas/mochi-api-client"
+    
 [tool.poetry.dependencies]
 python = "^3.10"
 requests = "^2.32.3"
@@ -22,6 +39,3 @@ interrogate = "^1.7.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.poetry.package]
-include = "mochi"
