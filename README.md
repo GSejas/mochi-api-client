@@ -1,6 +1,11 @@
 # Mochi API Client
 The Mochi API Client is a Python library designed to simplify interacting with the Mochi API, allowing developers to easily create, retrieve, update, and delete cards and decks within their Python applications.
 
+![Build Status](https://github.com/gsejas/mochi-api-client/actions/workflows/publish.yml/badge.svg)
+![PyPI Version](https://img.shields.io/pypi/v/mochi-api-client)
+![License](https://img.shields.io/github/license/GSejas/mochi-api-client)
+![Python Version](https://img.shields.io/pypi/pyversions/mochi-api-client)
+
 Features
 - Simplified access to the Mochi API endpoints
 - Methods for managing cards, decks, and templates
